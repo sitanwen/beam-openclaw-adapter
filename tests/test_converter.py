@@ -12,6 +12,7 @@ from convert_beam_to_locomo import (  # noqa: E402
     convert_questions,
     normalize_question_type,
 )
+from aggregate_beam_scores import summarize  # noqa: E402
 
 
 def test_normalize_question_type() -> None:
@@ -58,3 +59,15 @@ def test_convert_questions() -> None:
     assert questions[0]["answer"] == "小明"
     assert questions[0]["rubric"] == "回答出小明"
 
+
+def test_aggregate_scores() -> None:
+    rows = [
+        {"question_type": "information_extraction", "rubric_score": 1.0},
+        {"question_type": "information_extraction", "rubric_score": 0.5},
+        {"question_type": "temporal_reasoning", "rubric_score": 0.0},
+    ]
+    summary = summarize(rows, pass_threshold=0.5)
+    assert summary["question_count"] == 3
+    assert summary["mean_rubric_score"] == 0.5
+    assert summary["binary_pass_rate"] == 2 / 3
+    assert summary["by_question_type"]["information_extraction"]["count"] == 2
