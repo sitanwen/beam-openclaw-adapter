@@ -1,0 +1,10 @@
+{
+  "dataset": "Mohammadta/BEAM",
+  "split": "100K",
+  "sample_size": 5,
+  "seed": 42,
+  "selection_strategy": "fixed_indices",
+  "indices": [0, 4, 8, 12, 16],
+  "说明": "固定抽取5个case，保证不同OpenClaw配置使用完全相同的100道题。正式发布结果时请同时报告这些索引。"
+}
+
