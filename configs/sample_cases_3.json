@@ -1,0 +1,12 @@
+{
+  "chat_size": "100K",
+  "source_case_indices": [
+    0,
+    8,
+    16
+  ],
+  "case_count": 3,
+  "questions_per_case": 20,
+  "total_questions": 60,
+  "selection_reason": "覆盖 Coding、Writing Assistant & Learning、Lifestyle 三个差异领域"
+}

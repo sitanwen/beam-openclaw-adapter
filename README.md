@@ -1,5 +1,10 @@
 # BEAM → OpenClaw Eval 适配项目
 
+## 推荐：低成本3-case版本
+
+如果5 cases / 100 QA 成本过高，可使用 `data/converted/beam_100K_3cases_locomo.json`：3 cases / 60 QA，每种能力6题。先用 `data/converted/beam_100K_3cases_smoke.json` 跑3题单-Judge冒烟测试。完整步骤见 [SMOKE_TEST_3CASES.md](SMOKE_TEST_3CASES.md)。
+
+
 这个项目把 [BEAM 长期记忆评测数据集](https://huggingface.co/datasets/Mohammadta/BEAM)
 的 `100K` split 转换成两类可复用产物：
 
